@@ -63,15 +63,15 @@ class _MyLoginState extends State<MyLogin> {
                   Row(
                     mainAxisAlignment:
                         MainAxisAlignment.spaceBetween, // Adjust spacing
-                    children: [
-                      Text(
-                        "Forgot Password?",
-                        style: TextStyle(
-                          color: Colors.blue,
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
+                    // children: [
+                    //   Text(
+                    //     "Forgot Password?",
+                    //     style: TextStyle(
+                    //       color: Colors.blue,
+                    //       fontSize: 15,
+                    //       fontWeight: FontWeight.bold,
+                    //     ),
+                    //   ),
                       CircleAvatar(
                         radius: 25,
                         backgroundColor: Colors.blue,
