@@ -18,21 +18,21 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue, // Background color of the splash screen
+      backgroundColor: const Color.fromARGB(255, 255, 255, 255), // Background color of the splash screen
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(
-              Icons.flutter_dash, // Replace with your app's logo or icon
-              size: 100,
-              color: Colors.white,
+            Image.asset(
+              'assets/logo.png', // Path to your logo image
+              width: 150, // Adjust width as needed
+              height: 150, // Adjust height as needed
             ),
-            SizedBox(height: 20),
+            SizedBox(height: 0),
             Text(
-              "CRM Project",
+              "MicroNet CRM", // Your app name
               style: TextStyle(
-                color: Colors.white,
+                color: const Color.fromARGB(255, 8, 8, 8),
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
               ),
