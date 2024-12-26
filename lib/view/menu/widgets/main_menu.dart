@@ -5,6 +5,8 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -15,6 +17,8 @@ class MyApp extends StatelessWidget {
 }
 
 class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,6 +37,8 @@ class HomePage extends StatelessWidget {
 }
 
 class MainMenuDrawer extends StatelessWidget {
+  const MainMenuDrawer({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Drawer(

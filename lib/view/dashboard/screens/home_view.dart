@@ -1,8 +1,9 @@
-import 'package:crm_project/view/menu/widgets/main_menu.dart';  // Import the MainMenuDrawer from main_menu.dart
+import 'package:crm_project/view/menu/widgets/main_menu.dart'; // Import the MainMenuDrawer from main_menu.dart
 import 'package:flutter/material.dart';
 
-
 class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
