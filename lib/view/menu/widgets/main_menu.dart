@@ -1,7 +1,6 @@
 import 'package:crm_project/view/leads/screens/lead.dart';
 import 'package:flutter/material.dart';
 
-
 class MainMenuDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -9,46 +8,39 @@ class MainMenuDrawer extends StatelessWidget {
       child: ListView(
         padding: EdgeInsets.only(bottom: 0),
         children: [
-          DrawerHeader(
+          Container(
             decoration: BoxDecoration(
-              color: Colors.blue,
+              color: Colors.blue, // Blue container color
             ),
-            child: Column(
+            padding: EdgeInsets.only(
+                top: 60, bottom: 20), // Adjust the top and bottom padding here
+            child: Row(
+              crossAxisAlignment:
+                  CrossAxisAlignment.center, // Center vertically
               children: [
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(left: 10), // Add padding to the left
-                      child: CircleAvatar(
-                        radius: 25,
-                        backgroundColor: Colors.white,
-                        child: Icon(
-                          Icons.menu,
-                          size: 25,
-                          color: Colors.blue,
-                        ),
-                      ),
-                    ),
-                    SizedBox(width: 6),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 10), // Add padding to the left
-                      child: Text(
-                        'Main Menu',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 24,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                  ],
+                SizedBox(width: 10), // Add minimal space to the left edge
+                CircleAvatar(
+                  radius: 25,
+                  backgroundColor: Colors.white,
+                  child: Icon(
+                    Icons.menu,
+                    size: 25,
+                    color: Colors.blue,
+                  ),
                 ),
-                SizedBox(height: 5), // Adjust the space between the Row and the rest of the DrawerHeader content
+                SizedBox(width: 10), // Add spacing between the icon and text
+                Text(
+                  'Main Menu',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
               ],
             ),
-            padding: EdgeInsets.only(top: 20, bottom: 0),
           ),
+
           ListTile(
             leading: Icon(Icons.dashboard),
             title: Text('Dashboard',
