@@ -1,9 +1,8 @@
-// lib/views/login_view.dart
-
+import 'package:crm_project/view/dashboard/screens/home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-// import '../view_models/login_view_model.dart';
-import '/../view_model/auth/login_view_model.dart';
+import '/../view_model/auth/login_view_model.dart'; // Update with your actual path
+
 
 class MyLogin extends StatelessWidget {
   const MyLogin({super.key});
@@ -28,8 +27,11 @@ class LoginForm extends StatelessWidget {
 
     return Container(
       decoration: BoxDecoration(
-          image: DecorationImage(
-              image: AssetImage('assets/login.png'), fit: BoxFit.cover)),
+        image: DecorationImage(
+          image: AssetImage('assets/login.png'),
+          fit: BoxFit.cover,
+        ),
+      ),
       child: Scaffold(
         backgroundColor: Colors.transparent,
         body: Stack(
@@ -47,9 +49,10 @@ class LoginForm extends StatelessWidget {
             ),
             SingleChildScrollView(
               padding: EdgeInsets.only(
-                  top: MediaQuery.of(context).size.height * 0.54,
-                  left: 30,
-                  right: 30),
+                top: MediaQuery.of(context).size.height * 0.54,
+                left: 30,
+                right: 30,
+              ),
               child: Column(
                 children: [
                   TextField(
@@ -59,7 +62,8 @@ class LoginForm extends StatelessWidget {
                       filled: true,
                       hintText: 'Email',
                       border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20)),
+                        borderRadius: BorderRadius.circular(20),
+                      ),
                     ),
                   ),
                   SizedBox(height: 25),
@@ -71,7 +75,8 @@ class LoginForm extends StatelessWidget {
                       filled: true,
                       hintText: 'Password',
                       border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20)),
+                        borderRadius: BorderRadius.circular(20),
+                      ),
                     ),
                   ),
                   SizedBox(height: 25),
@@ -104,7 +109,12 @@ class LoginForm extends StatelessWidget {
                                 onPressed: () async {
                                   bool success = await viewModel.login();
                                   if (success) {
-                                    Navigator.pushNamed(context, 'home');
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => HomePage(),
+                                      ),
+                                    );
                                   }
                                 },
                               ),
