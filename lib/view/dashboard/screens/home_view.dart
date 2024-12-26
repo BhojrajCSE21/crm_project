@@ -1,13 +1,48 @@
-import 'package:crm_project/view/menu/widgets/main_menu.dart';  // Import the MainMenuDrawer from main_menu.dart
+import 'package:crm_project/view/menu/widgets/main_menu.dart';
 import 'package:flutter/material.dart';
-
 
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('CRM Dashboard'),
+        title: Row(
+          children: [
+            Expanded(
+              child: Container(
+                height: 40, // Reduced height for the search bar
+                child: TextField(
+                  decoration: InputDecoration(
+                    hintText: 'Search...',
+                    contentPadding: EdgeInsets.symmetric(vertical: 10), // Center text vertically
+                    prefixIcon: Icon(Icons.search),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(25),
+                      borderSide: BorderSide.none,
+                    ),
+                    filled: true,
+                    fillColor: Colors.white,
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(width: 10), // Space between search bar and profile icon
+            Container(
+              height: 40,
+              width: 40, // Smaller size for the profile icon circle
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: Colors.white, // White circle for the profile icon
+              ),
+              child: IconButton(
+                icon: Icon(Icons.account_circle),
+                onPressed: () {
+                  // Handle profile icon tap
+                },
+              ),
+            ),
+          ],
+        ),
         backgroundColor: Colors.blue,
       ),
       drawer: MainMenuDrawer(), // Use the MainMenuDrawer from main_menu.dart

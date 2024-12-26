@@ -32,7 +32,7 @@ class LoginViewModel with ChangeNotifier {
     // Simulating an API call
     await Future.delayed(Duration(seconds: 2));
 
-    if (_email == "user@example.com" && _password == "password123") {
+    if (_email == "user" && _password == "123") {
       _isLoading = false;
       _error = null;
       notifyListeners();
