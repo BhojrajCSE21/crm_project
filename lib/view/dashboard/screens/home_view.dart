@@ -14,7 +14,8 @@ class HomePage extends StatelessWidget {
                 child: TextField(
                   decoration: InputDecoration(
                     hintText: 'Search...',
-                    contentPadding: EdgeInsets.symmetric(vertical: 10), // Center text vertically
+                    contentPadding: EdgeInsets.symmetric(
+                        vertical: 10), // Center text vertically
                     prefixIcon: Icon(Icons.search),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(25),
