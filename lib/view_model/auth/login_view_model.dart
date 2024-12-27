@@ -1,47 +1,23 @@
-// lib/viewmodels/login_viewmodel.dart
-
+import 'package:crm_project/model/auth/login_model.dart';
 import 'package:flutter/material.dart';
 
-class LoginViewModel with ChangeNotifier {
-  String _email = '';
-  String _password = '';
-  bool _isLoading = false;
-  String? _error;
+class LoginViewModel extends ChangeNotifier {
+  final LoginModel _loginModel = LoginModel();
+  String _errorMessage = '';
 
-  // Getters
-  String get email => _email;
-  String get password => _password;
-  bool get isLoading => _isLoading;
-  String? get error => _error;
+  String get errorMessage => _errorMessage;
 
-  // Setters
-  void setEmail(String email) {
-    _email = email;
-    notifyListeners();
-  }
-
-  void setPassword(String password) {
-    _password = password;
-    notifyListeners();
-  }
-
-  Future<bool> login() async {
-    _isLoading = true;
-    notifyListeners();
-
-    // Simulating an API call
-    await Future.delayed(Duration(seconds: 2));
-
-    if (_email == "user" && _password == "123") {
-      _isLoading = false;
-      _error = null;
-      notifyListeners();
-      return true;
+  // Method to login and update UI based on result
+  Future<void> login(String email, String password) async {
+    var result = await _loginModel.login(email, password);
+    
+    if (result['success']) {
+      _errorMessage = ''; // Clear error message on successful login
+      // Navigate to next screen if needed
     } else {
-      _isLoading = false;
-      _error = "Invalid credentials. Please try again.";
-      notifyListeners();
-      return false;
+      _errorMessage = result['message'];
     }
+
+    notifyListeners(); // Update UI
   }
 }
